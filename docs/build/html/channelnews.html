@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Channel News &mdash; Opentopic Api Client 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Opentopic Api Client 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Channel" href="channels.html"/>
+        <link rel="prev" title="Testing" href="testing.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Opentopic Api Client
+          
+
+          
+            
+            <img src="_static/opentopic-Logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Channel News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="channels.html">Channel</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Opentopic Api Client</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Channel News</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/channelnews.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ot_api.channelnews">
+<span id="channel-news"></span><h1>Channel News<a class="headerlink" href="#module-ot_api.channelnews" title="Permalink to this headline">¶</a></h1>
+<p>Channel News are all newses that are scheduled or published to any type of channel.</p>
+<dl class="function">
+<dt id="ot_api.channelnews.ot_api.api.OpentopicApi.get_all_channelnews">
+<code class="descclassname">ot_api.api.OpentopicApi.</code><code class="descname">get_all_channelnews</code><span class="sig-paren">(</span><em>channel_pk</em><span class="sig-paren">)</span><a class="headerlink" href="#ot_api.channelnews.ot_api.api.OpentopicApi.get_all_channelnews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all news from <code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel_pk</strong> (<em>int</em>) &#8211; Id of <code class="xref py py-class docutils literal"><span class="pre">Channel</span></code></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">iterator of <a class="reference internal" href="#ot_api.channelnews.models.ChannelNews" title="ot_api.channelnews.models.ChannelNews"><code class="xref py py-class docutils literal"><span class="pre">ot_api.channelnews.models.ChannelNews</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ot_api.api</span> <span class="kn">import</span> <span class="n">OpentopicApi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">api</span> <span class="o">=</span> <span class="n">OpentopicApi</span><span class="p">(</span><span class="n">account_name</span><span class="o">=</span><span class="s">&#39;account_slug&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s">&#39;username&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s">&#39;password&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">news</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_channelnews</span><span class="p">(</span><span class="n">channel_pk</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">news</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="go">Profiling Python using cProfile: a concrete case</span>
+<span class="go">10 Reasons Python is Awesome</span>
+<span class="go">Doing Math with Python Available now!</span>
+<span class="go">Ubuntu 14.10 Has Reached End of Life, Upgrade to Ubuntu 15.04 Now</span>
+<span class="go">The Next Industrial Revolution Should Happen In America</span>
+<span class="go">Quantitative Research in Python: Using Notebooks</span>
+<span class="go">SciPy 2015: Scientific Computing with Python Conference</span>
+<span class="go">Why the Ubuntu developer portal moved to DjangoCMS</span>
+<span class="go">Python video: P is better than NP :)</span>
+<span class="go">Ubuntu may beat Windows 10 to phone-PC convergence after all</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="ot_api.channelnews.models.ChannelNews">
+<em class="property">class </em><code class="descclassname">ot_api.channelnews.models.</code><code class="descname">ChannelNews</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ot_api.channelnews.models.ChannelNews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent single <cite>ChannelNews</cite> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>news_index</strong> &#8211; unique news index value</li>
+<li><strong>title</strong> &#8211; title of the news, it&#8217;s title that news was published with</li>
+<li><strong>description</strong> &#8211; description (body) of the news, it&#8217;s description that news was published with</li>
+<li><strong>extra_message</strong> &#8211; extra_message of the news, TODO: ? what is that ?</li>
+<li><strong>url</strong> &#8211; url of the news, depends on publication options might be original url or blog url
+if news was already published to blog platform (wordpress), also depends on options might be short or long version</li>
+<li><strong>is_published</strong> &#8211; bool value describing if news is already published (with success)</li>
+<li><strong>is_scheduled</strong> &#8211; bool value describing if news is scheduled to be publish</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="channels.html" class="btn btn-neutral float-right" title="Channel" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="testing.html" class="btn btn-neutral" title="Testing" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Tomasz Roszko.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

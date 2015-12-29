@@ -1,0 +1,22 @@
+ot_api.channels
+===============
+
+.. automodule:: ot_api.channels
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ChannelCollection
+   
+   
+
+   
+   
+   

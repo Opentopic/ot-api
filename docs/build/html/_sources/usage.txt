@@ -1,0 +1,7 @@
+Basic Usage
+===========
+
+.. note:: To use Api you need to have your Opentopic account slug, username and password.
+
+
+.. automodule:: ot_api
