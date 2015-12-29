@@ -1,0 +1,1 @@
+CHANNEL_ENDPOINT = 'channels/'
