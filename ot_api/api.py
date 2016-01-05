@@ -1,11 +1,12 @@
 from functools import partialmethod
 from pip._vendor import requests
 from ot_api.endpoints import AUTHORIZATION_TOKEN
-from ot_api.exceptions import AuthorizationException, NoParamException
+from ot_api.exceptions import AuthorizationException
 
 from .recommendations.collections import RecommendationCollection
 from .channels.collections import ChannelCollection
 from .channelnews.collections import ChannelNewsCollection
+from .recommendation_news.collections import RecommendationNewsCollection
 
 
 class OpentopicApiMeta(type):
@@ -40,7 +41,8 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
     COLLECTIONS = (
         RecommendationCollection,
         ChannelCollection,
-        ChannelNewsCollection
+        ChannelNewsCollection,
+        RecommendationNewsCollection
     )
 
     def __init__(self, account_name, username, password):
@@ -126,7 +128,7 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
                 obj = collection.model(**collection.parser()(item))
                 yield obj
 
-            next = json_response['next'] if is_standard_json else None
+            next = json_response['next'] if is_standard_json and json_response.get('next') else None
             if next:
                 for item in response_iterator(url=next):
                     yield item
