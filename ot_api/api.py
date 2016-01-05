@@ -108,18 +108,23 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
             headers = {'Authorization': 'Token {0}'.format(self.authorization_token)}
         else:
             headers = None
-        r = method(url, data=data, headers=headers)
+        # fix that
+        if method == requests.get:
+            r = method(url, params=data, headers=headers)
+        else:
+            r = method(url, data=data, headers=headers)
         return r.json()
 
     def _get_all(self, collection, **kwargs):
         """get all elements from given collection"""
+        data = kwargs.get('data', {})
         col = collection(account_name=self.account_name, **kwargs)
 
         def response_iterator(url):
             """
             iterate over all elements in api if there is next page do the same again
             """
-            json_response = self.get(url=url)
+            json_response = self.get(url=url, **data)
 
             # TODO: all api endpoints should be standarize, some of them looks to have different json structure
             is_standard_json = type(json_response) == dict
