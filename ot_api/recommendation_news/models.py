@@ -26,6 +26,14 @@ class RecommendationNews(OpentopicModel):
     url = fields.String()
     image = fields.String()
 
+    popularity = fields.Integer()
+    twitter_count = fields.Integer()
+    facebook_like_count = fields.Integer()
+    linkedin_share_count = fields.Integer()
+    googleplus_share_count = fields.Integer()
+
+    sorting_factor = fields.Float()
+
     parser = parse_recommendationnews
 
     def __str__(self):

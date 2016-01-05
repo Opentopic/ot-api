@@ -9,5 +9,11 @@ def parse_recommendationnews(raw):
         'title': raw['title'],
         'description': raw['description'],
         'url': raw['url'],
-        'image': raw['image_original']
+        'image': raw['image_original'],
+        'popularity': raw['popularity'],
+        'sorting_factor': raw['sorting_factor'],
+        'twitter_count': raw['twitter_count'],
+        'facebook_like_count': raw['facebook_like_count'],
+        'linkedin_share_count': raw['linkedin_share_count'],
+        'googleplus_share_count': raw['googleplus_share_count']
     }
