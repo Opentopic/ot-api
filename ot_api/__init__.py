@@ -7,7 +7,7 @@ after :class:`OpentopiApi` initialization you can start using available endpoint
 
 >>> from ot_api.api import OpentopicApi
 >>> api = OpentopicApi(account_name='account_slug', username='username', password='password')
->>> api.get_channels()
+>>> api.get_all_channels()
 [channel_1, channel_2]
 
 """

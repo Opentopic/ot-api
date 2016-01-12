@@ -10,8 +10,10 @@ from .parsers import parse_recommendation
 
 class Recommendation(OpentopicModel):
     """
-    Represent recommendation object.
-    TODO: link to documentation
+    Represent single `Recommendation` object
+
+    :param pk: id of `Recommendation`
+    :param name: name of `Recommendation`
     """
 
     pk = fields.Integer()

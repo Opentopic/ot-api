@@ -14,7 +14,7 @@ Channel News are all newses that are scheduled or published to any type of chann
 
 >>> from ot_api.api import OpentopicApi
 >>> api = OpentopicApi(account_name='account_slug', username='username', password='password')
->>> news = api.get_channelnews(channel_pk=123)
+>>> news = api.get_all_channelnews(channel_pk=123)
 >>> for n in news:
 >>>     print(n.title)
 Profiling Python using cProfile: a concrete case

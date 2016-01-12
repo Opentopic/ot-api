@@ -1,20 +1,20 @@
 """
-Channel News are all newses that are scheduled or published to any type of channel.
+Recommendation News are all newses that are classified to be displayed in recommendation.
 
-.. function:: ot_api.api.OpentopicApi.get_all_channelnews(channel_pk)
+.. function:: ot_api.api.OpentopicApi.get_all_recommendation_news(recommendation_pk)
 
-    Get all news from :class:`Channel`
+    Get all news from :class:`Recommendation`
 
-    :param channel_pk: Id of :class:`Channel`
-    :type channel_pk: int
-    :return: iterator of :class:`ot_api.channelnews.models.ChannelNews`
+    :param recommendation_pk: Id of :class:`Recommendation`
+    :type recommendation_pk: int
+    :return: iterator of :class:`ot_api.recommendation_news.models.RecommendationNews`
 
 
 :Example:
 
 >>> from ot_api.api import OpentopicApi
 >>> api = OpentopicApi(account_name='account_slug', username='username', password='password')
->>> news = api.get_channelnews(channel_pk=123)
+>>> news = api.get_all_recommendation_news(recommendation_pk=123)
 >>> for n in news:
 >>>     print(n.title)
 Profiling Python using cProfile: a concrete case

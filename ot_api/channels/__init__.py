@@ -29,7 +29,7 @@ All type of channel might required specific data for publications.
 
 >>> from ot_api.api import OpentopicApi
 >>> api = OpentopicApi(account_name='account_slug', username='username', password='password')
->>> channels = api.get_channel()
+>>> channels = api.get_all_channel()
 >>> for channel in channels:
 >>>     print(channel.name)
 Tomasz Twitter

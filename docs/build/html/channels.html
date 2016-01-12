@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="Opentopic Api Client 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Recommendations" href="recommendations.html"/>
         <link rel="prev" title="Channel News" href="channelnews.html"/> 
 
   
@@ -90,6 +91,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="channelnews.html">Channel News</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recommendations.html">Recommendations</a></li>
 </ul>
 
             
@@ -178,7 +180,7 @@
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ot_api.api</span> <span class="kn">import</span> <span class="n">OpentopicApi</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">api</span> <span class="o">=</span> <span class="n">OpentopicApi</span><span class="p">(</span><span class="n">account_name</span><span class="o">=</span><span class="s">&#39;account_slug&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s">&#39;username&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s">&#39;password&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">channels</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_channel</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">channels</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get_all_channel</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">channel</span> <span class="ow">in</span> <span class="n">channels</span><span class="p">:</span>
 <span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span><span class="p">(</span><span class="n">channel</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="go">Tomasz Twitter</span>
@@ -213,6 +215,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="recommendations.html" class="btn btn-neutral float-right" title="Recommendations" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="channelnews.html" class="btn btn-neutral" title="Channel News" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

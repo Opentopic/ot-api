@@ -27,3 +27,5 @@ Available endpoints
 
     channelnews.rst
     channels.rst
+    recommendations.rst
+    recommendation_news.rst

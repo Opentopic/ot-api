@@ -10,7 +10,7 @@ from .parsers import parse_recommendationnews
 
 class RecommendationNews(OpentopicModel):
     """
-    Represent single `ChannelNews` object.
+    Represent single `RecommendationNews` object.
 
     :param pk: unique news index value
     :param title: title of the news, it's title that news was published with
