@@ -15,5 +15,8 @@ def parse_recommendationnews(raw):
         'twitter_count': raw['twitter_count'],
         'facebook_like_count': raw['facebook_like_count'],
         'linkedin_share_count': raw['linkedin_share_count'],
-        'googleplus_share_count': raw['googleplus_share_count']
+        'googleplus_share_count': raw['googleplus_share_count'],
+
+        'description_plain': raw['description_plain'],
+        'keywords': ', '.join(raw['tags'])
     }
