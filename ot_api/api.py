@@ -1,4 +1,6 @@
 from functools import partialmethod
+from json import JSONDecodeError
+
 from pip._vendor import requests
 from ot_api.endpoints import AUTHORIZATION_TOKEN
 from ot_api.exceptions import AuthorizationException
@@ -115,7 +117,10 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
             r = method(url, params=data, headers=headers)
         else:
             r = method(url, data=data, headers=headers)
-        return r.json()
+        try:
+            return r.json()
+        except JSONDecodeError:
+            pass
 
     def _get_all(self, collection, **kwargs):
         """get all elements from given collection"""
