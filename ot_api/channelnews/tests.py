@@ -6,6 +6,7 @@ from .collections import ChannelNewsCollection
 
 JSON_OBJECT = """
 {
+    "id": 123,
     "news_index": "AVER72uWFut5Shklwyv4",
     "title": "Profiling Python using cProfile: a concrete case",
     "description": "Test Description",

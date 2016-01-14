@@ -12,6 +12,7 @@ class ChannelNews(OpentopicModel):
     """
     Represent single `ChannelNews` object.
 
+    :param pk: channel news id
     :param news_index: unique news index value
     :param title: title of the news, it's title that news was published with
     :param description: description (body) of the news, it's description that news was published with
@@ -22,6 +23,7 @@ class ChannelNews(OpentopicModel):
     :param is_scheduled: bool value describing if news is scheduled to be publish
     """
 
+    pk = fields.Integer()
     news_index = fields.String()
     title = fields.String()
     description = fields.String()

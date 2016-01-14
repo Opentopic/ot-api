@@ -1,1 +1,1 @@
-RECOMMENDATIONNEWS_ENDPOINT = 'recommendations/targets/{recommendation_pk}/news_list/'
+RECOMMENDATIONNEWS_ENDPOINT = 'recommendations/targets/{recommendation_pk}/news_list'

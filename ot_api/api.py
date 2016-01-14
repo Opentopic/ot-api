@@ -7,6 +7,7 @@ from .recommendations.collections import RecommendationCollection
 from .channels.collections import ChannelCollection
 from .channelnews.collections import ChannelNewsCollection
 from .recommendation_news.collections import RecommendationNewsCollection
+from .sources.collections import SourceCollection
 
 
 class OpentopicApiMeta(type):
@@ -42,7 +43,8 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         RecommendationCollection,
         ChannelCollection,
         ChannelNewsCollection,
-        RecommendationNewsCollection
+        RecommendationNewsCollection,
+        SourceCollection
     )
 
     def __init__(self, account_name, username, password):

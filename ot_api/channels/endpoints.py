@@ -1,1 +1,1 @@
-CHANNEL_ENDPOINT = 'channels/'
+CHANNEL_ENDPOINT = 'channels'

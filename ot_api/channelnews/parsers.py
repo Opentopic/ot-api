@@ -5,6 +5,7 @@ def parse_channelnews(raw):
     :return: return dict with formated data according to :class:`ChannelNews`
     """
     return {
+        'pk': raw['id'],
         'news_index': raw['news_index'],
         'title': raw['title'],
         'description': raw['description'],
