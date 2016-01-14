@@ -1,5 +1,9 @@
 from functools import partialmethod
-from json import JSONDecodeError
+try:
+    from json import JSONDecodeError
+except ImportError:
+    # for lower version than python 3.5
+    JSONDecodeError = ValueError
 
 from pip._vendor import requests
 from ot_api.endpoints import AUTHORIZATION_TOKEN
