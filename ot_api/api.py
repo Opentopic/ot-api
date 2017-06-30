@@ -53,12 +53,13 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         SourceCollection
     )
 
-    def __init__(self, account_name, username, password):
+    def __init__(self, account_name, username, password, user_agent=None):
         self.account_name = account_name
         self.username = username
         self.password = password
 
         self._authorization_token = None
+        self._user_agent = user_agent
 
     @property
     def authorization_token(self):
@@ -112,10 +113,11 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         return self._request(method=requests.get, authorization_required=authorization_required, url=url, data=data)
 
     def _request(self, method, url, data, authorization_required=True):
+        headers = {}
+        if self._user_agent:
+            headers['User-Agent'] = self._user_agent
         if authorization_required:
-            headers = {'Authorization': 'Token {0}'.format(self.authorization_token)}
-        else:
-            headers = None
+            headers['Authorization'] = 'Token {0}'.format(self.authorization_token)
         # fix that
         if method == requests.get:
             r = method(url, params=data, headers=headers)
