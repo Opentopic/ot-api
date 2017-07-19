@@ -73,5 +73,3 @@ class OpentopicCollection(object, metaclass=OpentopicCollectionMeta):
         :return: return list of params that are required and that were not delivered
         """
         return list(set(cls.init_params) - set(params))
-
-

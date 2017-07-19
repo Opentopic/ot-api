@@ -1,4 +1,6 @@
-from functools import partialmethod
+from functools import partialmethod, lru_cache
+from urllib.parse import urljoin
+
 try:
     from json import JSONDecodeError
 except ImportError:
@@ -58,25 +60,16 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         self.username = username
         self.password = password
 
-        self._authorization_token = None
         self._user_agent = user_agent
 
-    @property
-    def authorization_token(self):
-        """
-        :return: authorization_token, used to authorize with api
-        """
-        if not self._authorization_token:
-            self._authorization_token = self.authorize()
-        return self._authorization_token
-
-    def authorize(self):
+    @lru_cache(maxsize=None)
+    def authorize(self, url):
         """
         Make authorization to opentopic api
         :return: authorization token
         """
         response = self.post(
-            url=AUTHORIZATION_TOKEN,
+            url=url,
             username=self.username,
             password=self.password,
             authorization_required=False
@@ -101,7 +94,7 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         :param data: data to send in POST
         :return: data from post response
         """
-        return self._request(method=requests.post, authorization_required=authorization_required, url=url, data=data)
+        return self._request(requests.post, url, data, authorization_required)
 
     def get(self, url, authorization_required=True, **data):
         """
@@ -110,14 +103,30 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
         :param data: data to send in GET
         :return: data from post response
         """
-        return self._request(method=requests.get, authorization_required=authorization_required, url=url, data=data)
+        return self._request(requests.get, url, data, authorization_required)
 
     def _request(self, method, url, data, authorization_required=True):
+        """
+        :param method:
+        :type method: callable
+
+        :param url:
+        :type url: str
+
+        :param data:
+        :type data: dict
+
+        :param authorization_required:
+        :type authorization_required: bool
+
+        :return:
+        :rtype: dict
+        """
         headers = {}
         if self._user_agent:
             headers['User-Agent'] = self._user_agent
         if authorization_required:
-            headers['Authorization'] = 'Token {0}'.format(self.authorization_token)
+            headers['Authorization'] = 'Token {0}'.format(self.authorize(urljoin(url, AUTHORIZATION_TOKEN)))
         # fix that
         if method == requests.get:
             r = method(url, params=data, headers=headers)
@@ -139,7 +148,7 @@ class OpentopicApi(object, metaclass=OpentopicApiMeta):
             """
             json_response = self.get(url=url, **data)
 
-            # TODO: all api endpoints should be standarize, some of them looks to have different json structure
+            # TODO: all api endpoints should be standarized, some of them looks to have different json structure
             is_standard_json = type(json_response) == dict
             items = json_response['results'] if is_standard_json else json_response
             for item in items:

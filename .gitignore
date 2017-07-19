@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 
 # C extensions
 *.so
@@ -56,3 +57,15 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# IDE
+.idea
+
+# compose
+docker-compose.override.yml

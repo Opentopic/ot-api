@@ -16,7 +16,8 @@ JSON_OBJECT = """
     "description_plain": "How do you create a great place to work?",
     "paragraph_count": 24,
     "chars_lb_ratio": 286,
-    "image_original": "https://hbr.org/resources/images/article_assets/2015/11/nov15-30-dave-wheeler-work-life-850x478.jpeg",
+    "image_original": "https://hbr.org/resources/images/article_assets/2015/11/"
+                      "nov15-30-dave-wheeler-work-life-850x478.jpeg",
     "has_image": true,
     "video": null,
     "has_video": false,
@@ -29,7 +30,11 @@ JSON_OBJECT = """
         "Employee engagement",
         "Dieting"
     ],
-    "summary": "Once, paying people well, offering interesting assignments, and providing recognition may have been enough. But the nature of work has changed.  Over the past decade, technological advances have enabled us to work at all hours, often at great expense to our sleep.  We’re surrounded by devices that make everything feel urgent, peppering us with distractions and contributing to an ongoing experience of stress.",
+    "summary": "Once, paying people well, offering interesting assignments, "
+               "and providing recognition may have been enough. But the nature of work has changed.  "
+               "Over the past decade, technological advances have enabled us to work at all hours, "
+               "often at great expense to our sleep.  We’re surrounded by devices that make everything "
+               "feel urgent, peppering us with distractions and contributing to an ongoing experience of stress.",
     "publication_date": "2015-11-30T00:00:00Z",
     "sources": [
         3894,

@@ -1,8 +1,6 @@
 """
 Test collection used only for testing purpose
 """
-import json
-
 from booby import fields
 from ot_api.base import OpentopicModel
 
